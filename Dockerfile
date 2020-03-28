@@ -25,10 +25,10 @@ RUN mkdir -p /home/$NB_USER/bin && \
     chmod a+x bin/clustalo && \
     . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     conda activate notebook-env && \
+    conda install -c conda-forge nodejs -y && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter labextension install jupyterlab_tensorboard && \
     jupyter serverextension enable --sys-prefix nbserverproxy
 EXPOSE 8888
 CMD [ "notebook" ]
-
