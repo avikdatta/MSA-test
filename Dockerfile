@@ -57,7 +57,7 @@ RUN mkdir -p /home/$NB_USER/bin && \
     conda install -c bioconda spades -y && \
     conda install -c bioconda mafft && \
     conda install -c bioconda raxml -y && \
-    conda install -c biobuilds clustalw && \
+    conda install -c bioconda clustalw && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter labextension install jupyterlab_tensorboard && \
