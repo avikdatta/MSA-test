@@ -28,6 +28,13 @@ RUN mkdir -p /home/$NB_USER/bin && \
     conda activate notebook-env && \
     conda install -c conda-forge nodejs -y && \
     conda install -c hcc aspera-cli -y && \
+    conda install -c bioconda seqkit -y && \
+    conda install -c bioconda kneaddata -y && \
+    conda install -c bioconda bowtie2 && \
+    conda install -c bioconda gatk4 && \
+    conda install -c bioconda spades -y && \
+    conda install -c bioconda mafft && \
+    conda install -c bioconda raxml -y && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter labextension install jupyterlab_tensorboard && \
