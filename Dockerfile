@@ -6,7 +6,29 @@ ENV NB_USER vmuser
 ENV NB_UID 1000
 USER root
 WORKDIR /
-RUN apt-get -y update
+RUN apt-get -y update && \
+    apt-get install --no-install-recommends -y \
+      libfontconfig1 \
+      libxrender1 \
+      libreadline6-dev \
+      libreadline6 \
+      libicu-dev \
+      libc6-dev \
+      icu-devtools \
+      libjpeg-dev \
+      libxext-dev \
+      libcairo2 \
+      libicu55 \
+      libicu-dev \
+      gcc \
+      g++ \
+      make \
+      libgcc-5-dev \
+      gfortran \
+      git  && \
+    apt-get purge -y --auto-remove && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 USER $NB_USER
 WORKDIR /home/$NB_USER
 ENV TMPDIR=/home/$NB_USER/.tmp
