@@ -23,6 +23,8 @@ WORKDIR /home/$NB_USER
 RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O bin/clustalo http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 && \
     chmod a+x bin/clustalo && \
+    . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
+    conda activate notebook-env && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter labextension install jupyterlab_tensorboard && \
