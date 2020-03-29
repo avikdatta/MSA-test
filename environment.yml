@@ -3,12 +3,10 @@ channels:
   - bioconda
   - defaults
   - hcc
-  - 
 dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
   - conda-forge::cmake
-  - conda-forge::python-igraph
   - hcc::aspera-cli
   - bioconda::seqkit
   - bioconda::kneaddata
