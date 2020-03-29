@@ -19,6 +19,7 @@ dependencies:
   - bioconda::mafft
   - bioconda::raxml
   - bioconda::clustalw
+  - bioconda::sra-tools
   - hcc::aspera-cli
   - pip
   - pip:
