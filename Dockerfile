@@ -28,6 +28,7 @@ RUN apt-get -y update && \
       openjdk-8-jre-headless \
       ca-certificates-java \
       openssl \
+      openssh-client \
       libssl-dev \
       git  && \
     apt-get purge -y --auto-remove && \
