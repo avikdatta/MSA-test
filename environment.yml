@@ -8,6 +8,7 @@ dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
   - conda-forge::cmake
+  - conda-forge::python-igraph
   - hcc::aspera-cli
   - bioconda::seqkit
   - bioconda::kneaddata
@@ -18,7 +19,6 @@ dependencies:
   - bioconda::raxml
   - bioconda::clustalw
   - bioconda::r-essentials
-  - bioconda::python-igraph
   - bioconda::r-rcpp
   - bioconda::r-devtools
   - bioconda::r-biocmanager
