@@ -49,10 +49,9 @@ RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O bin/clustalo http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 && \
     chmod a+x bin/clustalo && \
     . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
-    conda deactivate && \
     conda update -n base -c defaults conda && \
+    conda activate notebook-env && \
     conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
-    source activate notebook-env && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter serverextension enable --sys-prefix nbserverproxy
