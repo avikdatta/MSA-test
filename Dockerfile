@@ -25,6 +25,10 @@ RUN apt-get -y update && \
       make \
       libgcc-5-dev \
       gfortran \
+      openjdk-8-jre-headless \
+      ca-certificates-java \
+      openssl \
+      libssl-dev
       git  && \
     apt-get purge -y --auto-remove && \
     apt-get clean && \
