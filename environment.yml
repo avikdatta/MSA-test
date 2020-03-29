@@ -1,0 +1,29 @@
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - hcc
+  - 
+dependencies:
+  - conda-forge::nodejs
+  - conda-forge::seaborn
+  - conda-forge::cmake
+  - hcc::aspera-cli
+  - bioconda::seqkit
+  - bioconda::kneaddata
+  - bioconda::bowtie2
+  - bioconda::gatk4
+  - bioconda::spades
+  - bioconda::mafft
+  - bioconda::raxml
+  - bioconda::clustalw
+  - bioconda::r-essentials
+  - bioconda::python-igraph
+  - bioconda::r-rcpp
+  - bioconda::r-devtools
+  - bioconda::r-biocmanager
+  - pip
+  - pip:
+    - rpy2
+    - requests
+    - plotly
