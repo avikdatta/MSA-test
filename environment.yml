@@ -2,7 +2,6 @@ channels:
   - conda-forge
   - bioconda
   - defaults
-  - hcc
 dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
@@ -11,7 +10,6 @@ dependencies:
   - conda-forge::r-rcpp
   - conda-forge::r-devtools
   - conda-forge::r-biocmanager
-  - hcc::aspera-cli
   - bioconda::seqkit
   - bioconda::kneaddata
   - bioconda::bowtie2
