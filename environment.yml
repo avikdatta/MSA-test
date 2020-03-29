@@ -2,6 +2,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - hcc
 dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
@@ -18,6 +19,7 @@ dependencies:
   - bioconda::mafft
   - bioconda::raxml
   - bioconda::clustalw
+  - hcc::aspera-cli
   - pip
   - pip:
     - rpy2
