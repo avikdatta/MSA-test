@@ -35,32 +35,26 @@ ENV TMPDIR=/home/$NB_USER/.tmp
 ENV PATH=$PATH:/home/$NB_USER/miniconda3/bin/
 RUN rm -f /home/$NB_USER/environment.yml && \
     rm -f /home/$NB_USER/Dockerfile && \
+    rm -rf /home/$NB_USER/examples && \
     mkdir /home/$NB_USER/examples
 COPY examples/* /home/$NB_USER/examples/
 COPY Dockerfile /home/$NB_USER/Dockerfile
+COPY environment.yml /home/$NB_USER/environment.yml
 USER root
-RUN chown -R ${NB_UID} /home/$NB_USER/examples
+RUN chown -R ${NB_UID} /home/$NB_USER/examples && \
+    chown ${NB_UID} /home/$NB_USER/environment.yml
 USER $NB_USER
 WORKDIR /home/$NB_USER
 RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O bin/clustalo http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 && \
     chmod a+x bin/clustalo && \
     . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
+    conda deactivate && \
     conda update -n base -c defaults conda && \
-    conda activate notebook-env && \
-    conda install -c conda-forge nodejs -y && \
-    conda install -c hcc aspera-cli -y && \
-    conda install -c bioconda seqkit -y && \
-    conda install -c bioconda kneaddata -y && \
-    conda install -c bioconda bowtie2 && \
-    conda install -c bioconda gatk4 && \
-    conda install -c bioconda spades -y && \
-    conda install -c bioconda mafft && \
-    conda install -c bioconda raxml -y && \
-    conda install -c bioconda clustalw && \
+    conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
-    jupyter labextension install jupyterlab_tensorboard && \
     jupyter serverextension enable --sys-prefix nbserverproxy
 EXPOSE 8888
+EXPOSE 33001
 CMD [ "notebook" ]
