@@ -7,6 +7,10 @@ dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
   - conda-forge::cmake
+  - conda-forge::r-essentials
+  - conda-forge::r-rcpp
+  - conda-forge::r-devtools
+  - conda-forge::r-biocmanager
   - hcc::aspera-cli
   - bioconda::seqkit
   - bioconda::kneaddata
@@ -16,10 +20,6 @@ dependencies:
   - bioconda::mafft
   - bioconda::raxml
   - bioconda::clustalw
-  - bioconda::r-essentials
-  - bioconda::r-rcpp
-  - bioconda::r-devtools
-  - bioconda::r-biocmanager
   - pip
   - pip:
     - rpy2
