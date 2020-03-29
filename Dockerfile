@@ -52,6 +52,7 @@ RUN mkdir -p /home/$NB_USER/bin && \
     conda deactivate && \
     conda update -n base -c defaults conda && \
     conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
+    conda activate notebook-env && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
     jupyter serverextension enable --sys-prefix nbserverproxy
