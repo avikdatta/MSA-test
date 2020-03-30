@@ -30,6 +30,7 @@ RUN apt-get -y update && \
       openssl \
       openssh-client \
       libssl-dev \
+      libgl1-mesa-glx \
       git  && \
     apt-get purge -y --auto-remove && \
     apt-get clean && \
