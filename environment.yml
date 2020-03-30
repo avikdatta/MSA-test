@@ -2,6 +2,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - anaconda
   - hcc
 dependencies:
   - conda-forge::nodejs
@@ -20,6 +21,12 @@ dependencies:
   - bioconda::raxml
   - bioconda::clustalw
   - bioconda::sra-tools
+  - bioconda::muscle
+  - bioconda::fasttree
+  - bioconda::figtree
+  - etetoolkit::ete3
+  - etetoolkit::ete_toolchain
+  - anaconda::pyqt
   - hcc::aspera-cli
   - pip
   - pip:
