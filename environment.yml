@@ -24,8 +24,8 @@ dependencies:
   - bioconda::muscle
   - bioconda::fasttree
   - bioconda::figtree
-  - etetoolkit::ete3
-  - etetoolkit::ete_toolchain
+  - #etetoolkit::ete3
+  - #etetoolkit::ete_toolchain
   - anaconda::pyqt
   - hcc::aspera-cli
   - pip
