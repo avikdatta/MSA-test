@@ -52,8 +52,6 @@ RUN chown -R ${NB_UID} /home/$NB_USER/examples && \
 USER $NB_USER
 WORKDIR /home/$NB_USER
 RUN mkdir -p /home/$NB_USER/bin && \
-    wget -q -O bin/clustalo http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 && \
-    chmod a+x bin/clustalo && \
     . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     conda update -n base -c defaults conda && \
     conda activate notebook-env && \
