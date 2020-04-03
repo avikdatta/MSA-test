@@ -52,13 +52,14 @@ RUN chown -R ${NB_UID} /home/$NB_USER/examples && \
 USER $NB_USER
 WORKDIR /home/$NB_USER
 RUN mkdir -p /home/$NB_USER/bin && \
+    wget -q -O /home/$NB_USER/bin/fastv http://opengene.org/fastv/fastv  && \
+    chmod a+x /home/$NB_USER/bin/fastv && \
     . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     conda update -n base -c defaults conda && \
     conda activate notebook-env && \
     conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
     jupyter labextension install @jupyterlab/fasta-extension && \
-    jupyter labextension install jupyterlab-drawio && \
-    jupyter serverextension enable --sys-prefix nbserverproxy
+    jupyter labextension install jupyterlab-drawio
 EXPOSE 8888
 EXPOSE 33001
 CMD [ "notebook" ]
