@@ -24,6 +24,7 @@ dependencies:
   - bioconda::muscle
   - bioconda::fasttree
   - bioconda::figtree
+  - bioconda::megahit
   - anaconda::pyqt
   - hcc::aspera-cli
   - pip
