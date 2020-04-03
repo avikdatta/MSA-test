@@ -20,6 +20,7 @@ RUN apt-get -y update && \
       libcairo2 \
       libicu55 \
       libicu-dev \
+      cmake \
       gcc \
       g++ \
       make \
