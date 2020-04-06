@@ -80,10 +80,12 @@ RUN mkdir -p /home/$NB_USER/bin && \
     wget -O /tmp/mauve_linux_snapshot_2015-02-13.tar.gz http://darlinglab.org/mauve/snapshots/2015/2015-02-13/linux-x64/mauve_linux_snapshot_2015-02-13.tar.gz && \
     tar -zxf /tmp/mauve_linux_snapshot_2015-02-13.tar.gz && \
     mv mauve_snapshot_2015-02-13 /home/$NB_USER/bin/ && \
-    rm -rf /tmp/* && \
     rm -rf ${TMPDIR} && \
     mkdir -p ${TMPDIR} && \
     mkdir -p /home/$NB_USER/.cache
+USER root
+RUN rm -rf /tmp/*
+USER $NB_USER
 ENV PATH /home/$NB_USER/bin:${PATH}
 ENV PATH /home/$NB_USER/bin/MEGAHIT-1.2.9-Linux-x86_64-static/bin/:${PATH}
 ENV PATH /home/$NB_USER/bin/bbmap/:${PATH}
