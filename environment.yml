@@ -3,7 +3,6 @@ channels:
   - bioconda
   - defaults
   - anaconda
-  - hcc
 dependencies:
   - conda-forge::nodejs
   - conda-forge::seaborn
@@ -13,8 +12,6 @@ dependencies:
   - conda-forge::r-devtools
   - conda-forge::r-biocmanager
   - bioconda::seqkit
-  - bioconda::kneaddata
-  - bioconda::bowtie2
   - bioconda::gatk4
   - bioconda::spades
   - bioconda::mafft
@@ -24,9 +21,7 @@ dependencies:
   - bioconda::muscle
   - bioconda::fasttree
   - bioconda::figtree
-  - bioconda::megahit
   - anaconda::pyqt
-  - hcc::aspera-cli
   - pip
   - pip:
     - rpy2
@@ -34,3 +29,4 @@ dependencies:
     - plotly
     - ete3
     - pillow
+    - kneaddata --install-option="--bypass-dependencies-install"
