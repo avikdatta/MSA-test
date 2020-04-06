@@ -60,7 +60,6 @@ RUN . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     jupyter labextension install jupyterlab-drawio && \
     conda clean -a -y && \
     rm -rf /home/$NB_USER/.cache && \
-    rm -rf /tmp/* && \
     rm -rf ${TMPDIR} && \
     mkdir -p ${TMPDIR} && \
     mkdir -p /home/$NB_USER/.cache && \
