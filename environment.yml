@@ -22,6 +22,7 @@ dependencies:
   - bioconda::fasttree
   - bioconda::figtree
   - anaconda::pyqt
+  - bioconda::java-jdk=8
   - pip
   - pip:
     - rpy2
