@@ -57,7 +57,14 @@ RUN . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     conda activate notebook-env && \
     conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
     jupyter labextension install @jupyterlab/fasta-extension && \
-    jupyter labextension install jupyterlab-drawio
+    jupyter labextension install jupyterlab-drawio && \
+    conda clean -a -y && \
+    rm -rf /home/$NB_USER/.cache && \
+    rm -rf /tmp/* && \
+    rm -rf ${TMPDIR} && \
+    mkdir -p ${TMPDIR} && \
+    mkdir -p /home/$NB_USER/.cache && \
+    find miniconda3/ -type f -name *.pyc -exec rm -f {} \;
 RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O /home/$NB_USER/bin/fastv http://opengene.org/fastv/fastv  && \
     chmod a+x /home/$NB_USER/bin/fastv && \
@@ -72,9 +79,15 @@ RUN mkdir -p /home/$NB_USER/bin && \
     mv bowtie2-2.4.1-linux-x86_64 /home/$NB_USER/bin/ && \
     wget -O /tmp/mauve_linux_snapshot_2015-02-13.tar.gz http://darlinglab.org/mauve/snapshots/2015/2015-02-13/linux-x64/mauve_linux_snapshot_2015-02-13.tar.gz && \
     tar -zxf /tmp/mauve_linux_snapshot_2015-02-13.tar.gz && \
-    mv mauve_snapshot_2015-02-13 /home/$NB_USER/bin/
+    mv mauve_snapshot_2015-02-13 /home/$NB_USER/bin/ && \
+    rm -rf /tmp/* && \
+    rm -rf ${TMPDIR} && \
+    mkdir -p ${TMPDIR} && \
+    mkdir -p /home/$NB_USER/.cache
 ENV PATH /home/$NB_USER/bin:${PATH}
 ENV PATH /home/$NB_USER/bin/MEGAHIT-1.2.9-Linux-x86_64-static/bin/:${PATH}
+ENV PATH /home/$NB_USER/bin/bbmap/:${PATH}
+ENV PATH /home/$NB_USER/bin/bowtie2-2.4.1-linux-x86_64/:${PATH}
+ENV PATH /home/$NB_USER/bin/mauve_snapshot_2015-02-13/linux-x64/:${PATH}
 EXPOSE 8888
-EXPOSE 33001
 CMD [ "notebook" ]
