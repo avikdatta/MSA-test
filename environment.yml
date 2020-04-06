@@ -30,5 +30,4 @@ dependencies:
     - requests
     - plotly
     - ete3
-    - pillow
     - kneaddata --install-option="--bypass-dependencies-install"
