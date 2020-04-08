@@ -24,6 +24,7 @@ dependencies:
   - bioconda::figtree
   - anaconda::pyqt
   - bioconda::java-jdk=8
+  - bioconda::seqtk
   - pip
   - pip:
     - rpy2
