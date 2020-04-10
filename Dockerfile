@@ -89,6 +89,7 @@ RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O /tmp/mafft-7.450-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.450-linux.tgz && \
     tar -zxf /tmp/mafft-7.450-linux.tgz && \
     mv mafft-linux64 ~/bin/ && \
+    npm install --global auspice && \
     rm -rf ${TMPDIR} && \
     mkdir -p ${TMPDIR} && \
     mkdir -p /home/$NB_USER/.cache
