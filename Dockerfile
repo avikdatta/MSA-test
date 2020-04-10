@@ -20,6 +20,8 @@ RUN apt-get -y update && \
       libcairo2 \
       libicu55 \
       libicu-dev \
+      libjpeg-dev \
+      libpng-dev \
       libfreetype6-dev \
       pkg-config \
       cmake \
