@@ -32,4 +32,5 @@ dependencies:
     - plotly
     - ete3
     - jupyter_server_proxy
+    - nextstrain-augur[full]
     - kneaddata --install-option="--bypass-dependencies-install"
