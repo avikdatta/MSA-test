@@ -4,6 +4,7 @@ channels:
   - defaults
   - anaconda
 dependencies:
+  - conda-forge:matplotlib=3.0.2
   - conda-forge::nodejs
   - conda-forge::seaborn
   - conda-forge::cmake
@@ -27,7 +28,6 @@ dependencies:
   - bioconda::seqtk
   - pip
   - pip:
-    - matplotlib
     - rpy2
     - requests
     - plotly
