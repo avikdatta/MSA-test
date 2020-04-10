@@ -90,6 +90,8 @@ RUN mkdir -p /home/$NB_USER/bin && \
     tar -zxf /tmp/mafft-7.450-linux.tgz && \
     mv mafft-linux64 ~/bin/ && \
     npm install --global auspice && \
+    curl -L https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17_x64-linux.tar.bz2 | tar -jxvf - /home/$NB_USER/bin/minimap2 && \
+    chmod a+x /home/$NB_USER/bin/minimap2 && \
     rm -rf ${TMPDIR} && \
     mkdir -p ${TMPDIR} && \
     mkdir -p /home/$NB_USER/.cache
