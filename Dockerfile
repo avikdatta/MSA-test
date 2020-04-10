@@ -21,7 +21,7 @@ RUN apt-get -y update && \
       libicu55 \
       libicu-dev \
       libjpeg-dev \
-      libpng-dev \
+      libpng12-dev \
       libfreetype6-dev \
       pkg-config \
       cmake \
