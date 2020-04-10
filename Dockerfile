@@ -28,6 +28,7 @@ RUN apt-get -y update && \
       gcc \
       g++ \
       make \
+      curl \
       libgcc-5-dev \
       gfortran \
       openjdk-8-jre-headless \
@@ -37,7 +38,7 @@ RUN apt-get -y update && \
       libssl-dev \
       libgl1-mesa-glx \
       git  && \
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs && \
     apt-get purge -y --auto-remove && \
     apt-get clean && \
