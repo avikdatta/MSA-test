@@ -23,6 +23,7 @@ RUN apt-get -y update && \
       libjpeg-dev \
       libpng-dev \
       libfreetype6-dev \
+      pkg-config \
       cmake \
       gcc \
       g++ \
