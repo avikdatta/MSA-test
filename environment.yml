@@ -31,4 +31,5 @@ dependencies:
     - requests
     - plotly
     - ete3
+    - jupyter_server_proxy
     - kneaddata --install-option="--bypass-dependencies-install"
