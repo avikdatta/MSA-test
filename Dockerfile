@@ -37,6 +37,8 @@ RUN apt-get -y update && \
       libssl-dev \
       libgl1-mesa-glx \
       git  && \
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - && \
+    apt-get install -y nodejs
     apt-get purge -y --auto-remove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
