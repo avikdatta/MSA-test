@@ -83,7 +83,7 @@ RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O /tmp/bowtie2-2.4.1-linux-x86_64.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.1/bowtie2-2.4.1-linux-x86_64.zip/download && \
     unzip /tmp/bowtie2-2.4.1-linux-x86_64.zip && \
     mv bowtie2-2.4.1-linux-x86_64 /home/$NB_USER/bin/ && \
-    wget -O /tmp/mauve_linux_snapshot_2015-02-13.tar.gz http://darlinglab.org/mauve/snapshots/2015/2015-02-13/linux-x64/mauve_linux_snapshot_2015-02-13.tar.gz && \
+    wget -q -O /tmp/mauve_linux_snapshot_2015-02-13.tar.gz http://darlinglab.org/mauve/snapshots/2015/2015-02-13/linux-x64/mauve_linux_snapshot_2015-02-13.tar.gz && \
     tar -zxf /tmp/mauve_linux_snapshot_2015-02-13.tar.gz && \
     mv mauve_snapshot_2015-02-13 /home/$NB_USER/bin/ && \
     wget -q -O /tmp/mafft-7.450-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.450-linux.tgz && \
