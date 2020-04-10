@@ -4,8 +4,8 @@ channels:
   - defaults
   - anaconda
 dependencies:
-  - conda-forge:matplotlib==3.2.1
-  - conda-forge::nodejs
+  - conda-forge:matplotlib=3.2.1
+  - conda-forge::nodejs=10
   - conda-forge::seaborn
   - conda-forge::cmake
   - conda-forge::libgcc
