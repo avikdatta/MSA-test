@@ -5,6 +5,7 @@ channels:
   - anaconda
 dependencies:
   - conda-forge::nodejs
+  - conda-forge::matplotlib
   - conda-forge::seaborn
   - conda-forge::cmake
   - conda-forge::libgcc
