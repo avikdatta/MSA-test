@@ -58,6 +58,7 @@ RUN . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
     conda env update -q -n notebook-env --file /home/$NB_USER/environment.yml && \
     jupyter labextension install @jupyterlab/fasta-extension && \
     jupyter labextension install jupyterlab-drawio && \
+    jupyter serverextension enable --sys-prefix jupyter_server_proxy && \
     conda clean -a -y && \
     rm -rf /home/$NB_USER/.cache && \
     rm -rf ${TMPDIR} && \
@@ -67,6 +68,8 @@ RUN . /home/$NB_USER/miniconda3/etc/profile.d/conda.sh && \
 RUN mkdir -p /home/$NB_USER/bin && \
     wget -q -O /home/$NB_USER/bin/fastv http://opengene.org/fastv/fastv  && \
     chmod a+x /home/$NB_USER/bin/fastv && \
+    wget -q -O /home/$NB_USER/bin/fastp http://opengene.org/fastp/fastp && \
+    chmod a+x /home/$NB_USER/bin/fastp && \
     wget -q -O /tmp/MEGAHIT-1.2.9-Linux-x86_64-static.tar.gz https://github.com/voutcn/megahit/releases/download/v1.2.9/MEGAHIT-1.2.9-Linux-x86_64-static.tar.gz && \
     tar -zxf /tmp/MEGAHIT-1.2.9-Linux-x86_64-static.tar.gz && \
     mv MEGAHIT-1.2.9-Linux-x86_64-static /home/$NB_USER/bin/ && \
@@ -79,6 +82,9 @@ RUN mkdir -p /home/$NB_USER/bin && \
     wget -O /tmp/mauve_linux_snapshot_2015-02-13.tar.gz http://darlinglab.org/mauve/snapshots/2015/2015-02-13/linux-x64/mauve_linux_snapshot_2015-02-13.tar.gz && \
     tar -zxf /tmp/mauve_linux_snapshot_2015-02-13.tar.gz && \
     mv mauve_snapshot_2015-02-13 /home/$NB_USER/bin/ && \
+    wget -q -O /tmp/mafft-7.450-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.450-linux.tgz && \
+    tar -zxf /tmp/mafft-7.450-linux.tgz && \
+    mv mafft-linux64 ~/bin/ && \
     rm -rf ${TMPDIR} && \
     mkdir -p ${TMPDIR} && \
     mkdir -p /home/$NB_USER/.cache
@@ -90,5 +96,7 @@ ENV PATH /home/$NB_USER/bin/MEGAHIT-1.2.9-Linux-x86_64-static/bin/:${PATH}
 ENV PATH /home/$NB_USER/bin/bbmap/:${PATH}
 ENV PATH /home/$NB_USER/bin/bowtie2-2.4.1-linux-x86_64/:${PATH}
 ENV PATH /home/$NB_USER/bin/mauve_snapshot_2015-02-13/linux-x64/:${PATH}
+ENV PATH /home/$NB_USER/bin/mafft-linux64/:${PATH}
 EXPOSE 8888
+EXPOSE 4000
 CMD [ "notebook" ]
