@@ -38,6 +38,8 @@ RUN apt-get -y update && \
       libssl-dev \
       libgl1-mesa-glx \
       libncurses5-dev \
+      libbz2-1.0 \
+      libbz2-dev \
       git  && \
     curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -y nodejs && \
