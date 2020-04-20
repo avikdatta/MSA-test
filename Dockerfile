@@ -40,6 +40,8 @@ RUN apt-get -y update && \
       libncurses5-dev \
       libbz2-1.0 \
       libbz2-dev \
+      liblzma5  \
+      liblzma-dev \
       git  && \
     curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -y nodejs && \
