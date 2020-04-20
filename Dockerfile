@@ -37,6 +37,7 @@ RUN apt-get -y update && \
       openssh-client \
       libssl-dev \
       libgl1-mesa-glx \
+      libncurses5-dev \
       git  && \
     curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -y nodejs && \
